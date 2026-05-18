@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HireLens by Alakhy — AI-native applicant tracking and hiring intelligence built for teams who make technical hires. Early access now open.">
+  <title>HireLens — Alakhy Products</title>
+
+  <link rel="icon" href="data:,">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="/" class="nav-logo">Alak<span>hy</span></a>
+
+    <ul class="nav-links">
+      <li class="nav-item"><a href="/products.html">Products</a></li>
+      <li class="nav-item"><a href="/services.html">Services</a></li>
+      <li class="nav-item"><a href="/about.html">About</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="/about.html#contact" class="nav-cta">Engage Us</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <button class="nav-menu-btn" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navOverlay">
+        <span class="nav-menu-label" aria-hidden="true">Menu</span>
+        <span class="nav-menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Site navigation">
+    <div class="nav-overlay-inner">
+      <div class="nav-overlay-links">
+        <a href="/products.html">Products</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+      </div>
+      <div class="nav-overlay-footer">
+        <a href="/about.html#contact" class="nav-overlay-cta">Engage Us &#8594;</a>
+        <a href="mailto:hello@alakhy.com" class="nav-overlay-email">hello@alakhy.com</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-glow" aria-hidden="true"></div>
+      <div class="page-hero-inner">
+        <div class="eyebrow reveal">Products / HireLens</div>
+        <h1 class="page-hero-h1 reveal reveal-d1">
+          AI-native hiring<br><em>intelligence.</em>
+        </h1>
+        <p class="page-hero-sub reveal reveal-d2">
+          HireLens is an applicant tracking system built for teams who make technical hires. It understands the difference between a candidate who interviewed well and one who can actually do the work.
+        </p>
+      </div>
+    </div>
+
+    <!-- WHAT IS HIRELENS -->
+    <section class="services-teaser">
+      <div class="services-teaser-inner">
+
+        <div class="section-header">
+          <div class="reveal">
+            <div class="eyebrow">The problem</div>
+            <h2 class="section-h2">Hiring tools built<br><em>for volume.</em></h2>
+          </div>
+          <p class="section-intro reveal reveal-d1">
+            Most ATS platforms are built for HR teams processing high volumes of applications. They rank by keyword, filter by credential, and optimise for speed. They were not built for teams where every hire matters.
+          </p>
+        </div>
+
+        <div class="services-teaser-list">
+          <div class="service-brief reveal">
+            <div class="service-brief-num">01</div>
+            <div class="service-brief-name">Keyword matching fails</div>
+            <p class="service-brief-desc">Filters built on job titles and buzzwords miss the candidates who solve problems and eliminate the ones who just know the vocabulary.</p>
+          </div>
+          <div class="service-brief reveal reveal-d1">
+            <div class="service-brief-num">02</div>
+            <div class="service-brief-name">No technical depth</div>
+            <p class="service-brief-desc">Generic platforms cannot assess whether someone can architect a system, debug at scale, or lead an engineering team under pressure.</p>
+          </div>
+          <div class="service-brief reveal reveal-d2">
+            <div class="service-brief-num">03</div>
+            <div class="service-brief-name">Pipeline opacity</div>
+            <p class="service-brief-desc">You cannot see where strong candidates dropped out, which assessors are reliable, or what patterns separate hires who work from ones who do not.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="capabilities">
+      <div class="capabilities-inner">
+
+        <div class="section-header">
+          <div class="reveal">
+            <div class="eyebrow">What HireLens does</div>
+            <h2 class="section-h2">Built for<br><em>technical hiring.</em></h2>
+          </div>
+          <p class="section-intro reveal reveal-d1">
+            Four core capabilities. Each designed for teams where the cost of a wrong hire &#8212; or a missed one &#8212; is significant.
+          </p>
+        </div>
+
+        <div class="capabilities-grid">
+          <div class="capability-card reveal">
+            <div class="capability-num">01</div>
+            <div class="capability-title">Intelligent Screening</div>
+            <p class="capability-desc">AI that reads applications the way a senior engineer would. It looks for evidence of capability, not just credentials. Signals from what candidates have built, shipped, and solved &#8212; not what they have listed.</p>
+          </div>
+          <div class="capability-card reveal reveal-d1">
+            <div class="capability-num">02</div>
+            <div class="capability-title">Technical Assessment</div>
+            <p class="capability-desc">Role-specific assessments designed with technical depth. Not generic coding challenges &#8212; problem-solving scenarios calibrated to the actual demands of the role and the level of seniority required.</p>
+          </div>
+          <div class="capability-card reveal">
+            <div class="capability-num">03</div>
+            <div class="capability-title">Pipeline Intelligence</div>
+            <p class="capability-desc">Visibility into where candidates drop, which stages create friction, and which assessors make good decisions. The data to improve your process &#8212; not just your throughput.</p>
+          </div>
+          <div class="capability-card reveal reveal-d1">
+            <div class="capability-num">04</div>
+            <div class="capability-title">Hiring Analytics</div>
+            <p class="capability-desc">Patterns across your hiring cohorts. Which sources produce candidates who stay. Which interview signals predict performance. Institutional knowledge that compounds over time.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EARLY ACCESS -->
+    <section class="early-access" id="early-access">
+      <div class="early-access-inner">
+
+        <div class="early-access-left reveal">
+          <div class="eyebrow" style="color: var(--amber);">Early Access</div>
+          <h2 class="early-access-h2">
+            Get access<br>before we<br><em>launch.</em>
+          </h2>
+          <p class="early-access-body">
+            HireLens is in development. We are working with a small number of early adopters &#8212; technology teams and founders who hire senior engineering and AI talent and want to do it better.
+          </p>
+          <p class="early-access-body">
+            Early access means you shape the product. You get direct access to the team, a say in what we build first, and terms that reflect the fact that you took a chance on us before launch.
+          </p>
+          <p class="early-access-note">We respond to all requests within two business days.</p>
+        </div>
+
+        <div class="reveal reveal-d1">
+          <div class="form-title">Request<br>early access.</div>
+          <form class="enquiry-form" id="enquiryForm" action="#" method="POST">
+            <div class="field-row">
+              <div class="field">
+                <label for="fname">Your name</label>
+                <input type="text" id="fname" name="name" placeholder="Full name" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="forg">Organisation</label>
+                <input type="text" id="forg" name="organisation" placeholder="Company or startup" autocomplete="organization">
+              </div>
+            </div>
+            <div class="field">
+              <label for="femail">Email address</label>
+              <input type="email" id="femail" name="email" placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="fsize">Team size</label>
+              <div class="select-wrap">
+                <select id="fsize" name="nature">
+                  <option value="" disabled selected>How many hires do you make per year?</option>
+                  <option value="1-5">1 &#8211; 5</option>
+                  <option value="6-20">6 &#8211; 20</option>
+                  <option value="21-50">21 &#8211; 50</option>
+                  <option value="50+">More than 50</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fcontext">What are you hiring for?</label>
+              <textarea id="fcontext" name="context" placeholder="Tell us the roles you hire most often and what makes them hard to fill."></textarea>
+            </div>
+            <button class="btn-send" type="submit" id="sendBtn">Request access &#8594;</button>
+            <p class="form-note">No commitment. We will reach out to understand your needs before anything else.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ENGAGE CTA -->
+    <div class="engage-cta">
+      <div class="engage-cta-inner">
+        <div class="engage-cta-text reveal">
+          Questions about<br><em>HireLens?</em>
+        </div>
+        <div class="engage-cta-actions reveal reveal-d1">
+          <a href="mailto:hello@alakhy.com" class="btn-solid">hello@alakhy.com</a>
+          <a href="/services.html" class="engage-cta-email">See our services &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Alak<span>hy</span></div>
+      <div class="footer-tagline">Technology &#183; Products &#183; Insight</div>
+      <div class="footer-copy">&#169; 2026 Alakhy</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

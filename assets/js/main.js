@@ -87,6 +87,16 @@
     }
   });
 
+  /* ── ACTIVE NAV ─────────────────────────────────────────── */
+  (function () {
+    var path = window.location.pathname;
+    var page = path.replace(/\/$/, '').split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      var href = (a.getAttribute('href') || '').replace(/^\//, '').split('/').pop();
+      if (href && href === page) a.classList.add('active');
+    });
+  }());
+
   /* ── ENQUIRY FORM ────────────────────────────────────── */
   const form   = document.getElementById('enquiryForm');
   const sendBtn = document.getElementById('sendBtn');
