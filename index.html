@@ -3,226 +3,370 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alakhy is a technology company — products, incubator, and services at the intersection of deep technical expertise, AI intelligence, and commercial judgment.">
-  <title>Alakhy — Technology Company</title>
+  <meta name="description" content="Alakhy. Technology company operating across products, incubation, and services.">
+  <title>Alakhy</title>
 
-  <link rel="icon" href="data:,">
-
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23c49a3c'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' fill='white' text-anchor='middle'>A</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav" id="mainNav">
-    <a href="/" class="nav-logo">Alak<span>hy</span></a>
-
-    <ul class="nav-links">
-      <li class="nav-item"><a href="/products.html">Products</a></li>
-      <li class="nav-item"><a href="/services.html">Services</a></li>
-      <li class="nav-item"><a href="/about.html">About</a></li>
-    </ul>
-
-    <div class="nav-right">
-      <a href="/about.html#contact" class="nav-cta">Engage Us</a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/>
-          <line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/>
-          <line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
-      <button class="nav-menu-btn" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navOverlay">
-        <span class="nav-menu-label" aria-hidden="true">Menu</span>
-        <span class="nav-menu-icon" aria-hidden="true"><i></i><i></i></span>
-      </button>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Alak<span class="logo-accent">hy</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#what-we-are">What We Are</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#incubator">Incubator</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <a href="#contact" class="btn-primary">Engage With Us</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile fullscreen overlay -->
-  <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Site navigation">
-    <div class="nav-overlay-inner">
-      <div class="nav-overlay-links">
-        <a href="/products.html">Products</a>
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-      </div>
-      <div class="nav-overlay-footer">
-        <a href="/about.html#contact" class="nav-overlay-cta">Engage Us &#8594;</a>
-        <a href="mailto:hello@alakhy.com" class="nav-overlay-email">hello@alakhy.com</a>
-      </div>
-    </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#what-we-are">What We Are</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#incubator">Incubator</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="btn-primary">Engage With Us</a>
   </div>
 
   <main>
 
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
-      <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
       <div class="hero-inner">
-        <div class="eyebrow reveal">Technology Company</div>
-        <h1 class="hero-h1 reveal reveal-d1">
-          The definitive authority on<br><em>unseen technology risk.</em>
+        <h1 class="fade-up">
+          To be the definitive authority on the unseen technology risks that govern enterprise value.
         </h1>
-        <p class="hero-sub reveal reveal-d2">
-          Alakhy builds products, backs founders, and delivers services &#8212; at the intersection of deep technical expertise, AI intelligence, and commercial judgment. We work where technology decisions define enterprise value.
+        <p class="hero-sub fade-up delay-1">
+          We see what others miss. Technology company operating across products, incubation, and services. We architect systems where software meets real-world operations.
         </p>
-        <div class="hero-ctas reveal reveal-d3">
-          <a href="/services.html" class="btn-solid">Our services</a>
-          <a href="/about.html#contact" class="btn-text">Engage us <span class="arr">&#8594;</span></a>
+        <div class="hero-ctas fade-up delay-2">
+          <a href="#what-we-are" class="btn-primary">Explore Our Work</a>
+          <a href="#contact" class="btn-outline">Engage With Us</a>
         </div>
-      </div>
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- THREE ARMS -->
-    <div class="pillars">
-      <div class="pillar reveal">
-        <div class="pillar-num">01</div>
-        <div class="pillar-title">Products</div>
-        <p class="pillar-body">Software built and owned by Alakhy. HireLens &#8212; our AI-native applicant tracking system &#8212; is the first. Built for teams who need intelligent hiring infrastructure.</p>
-        <a href="/products.html" class="pillar-link">HireLens &#8594;</a>
-      </div>
-      <div class="pillar reveal reveal-d1">
-        <div class="pillar-num">02</div>
-        <div class="pillar-title">Incubator</div>
-        <p class="pillar-body">Early ventures backed at the intersection of technology and operations. Not just capital &#8212; technical depth, platform capability, and network embedded from day one.</p>
-        <a href="#incubator" class="pillar-link">Our thesis &#8594;</a>
-      </div>
-      <div class="pillar reveal reveal-d2">
-        <div class="pillar-num">03</div>
-        <div class="pillar-title">Services</div>
-        <p class="pillar-body">Seven practice areas. Principal-led on every engagement &#8212; from technology due diligence to fractional CTO. No handoffs.</p>
-        <a href="/services.html" class="pillar-link">All services &#8594;</a>
-      </div>
-    </div>
+    <div class="divider" aria-hidden="true"></div>
 
-    <!-- SERVICES TEASER -->
-    <section class="services-teaser" id="services">
-      <div class="services-teaser-inner">
+    <!-- WHAT WE ARE -->
+    <section class="section" id="what-we-are">
+      <div class="section-inner">
 
-        <div class="section-header">
-          <div class="reveal">
-            <div class="eyebrow">Services</div>
-            <h2 class="section-h2">Seven practice<br><em>areas.</em></h2>
+        <div class="asymmetric-header fade-up">
+          <div class="asymmetric-left">
+            <p class="eyebrow">What We Are</p>
+            <h2>Three distinct arms. One mission.</h2>
           </div>
-          <p class="section-intro reveal reveal-d1">
-            Each distinct. Each drawing on the same depth of technical, AI, and commercial expertise. Principal-led on every engagement &#8212; no handoffs.
+          <div class="asymmetric-right">
+            <p class="body-large">
+              Alakhy is a technology company, not a consulting firm. We build systems where software meets physical operations, financial infrastructure, and data people depend on. Our work spans large enterprises and startups, guided by principles of calm execution, quality, and platforms that endure.
+            </p>
+            <p class="body-muted">
+              We operate across three distinct arms, each serving different needs in the technology landscape. Whether you are seeking innovative products, early-stage backing, or specialized services, we bring architecture, capital, and network to the table.
+            </p>
+          </div>
+        </div>
+
+        <div class="arms-grid">
+          <div class="arm-card fade-up">
+            <h3>Products</h3>
+            <p>Software built and owned by Alakhy. HireLense, our AI-powered applicant tracking system, is live. More products in development.</p>
+            <a href="#products" class="link-arrow">Learn more &rarr;</a>
+          </div>
+          <div class="arm-card fade-up delay-1">
+            <h3>Incubator</h3>
+            <p>We back early-stage ventures at the intersection of technology and real-world operations. Capital, architecture, hiring, and network.</p>
+            <a href="#incubator" class="link-arrow">Learn more &rarr;</a>
+          </div>
+          <div class="arm-card fade-up delay-2">
+            <h3>Services</h3>
+            <p>Greenfield implementation, architecture advisory, data strategy, Odoo advisory, and hiring solutions for enterprises and startups.</p>
+            <a href="#services" class="link-arrow">Learn more &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+      <div class="section-inner">
+
+        <p class="eyebrow fade-up">Our Products</p>
+        <h2 class="section-h2 fade-up delay-1">Software built for the real world.</h2>
+
+        <a href="#contact" class="product-card fade-up delay-1">
+          <div class="product-card-header">
+            <div>
+              <h3>HireLense</h3>
+              <div class="tags" style="margin-top: 0.75rem;">
+                <span class="tag tag-accent">AI-Powered ATS</span>
+                <span class="tag tag-live">Live</span>
+              </div>
+            </div>
+            <span class="product-arrow">&rarr;</span>
+          </div>
+          <p class="body-large">
+            An applicant tracking system built with AI at its core. HireLense understands hiring workflows and brings intelligence to every stage of recruitment.
           </p>
-        </div>
+          <span class="btn-primary" style="pointer-events: none;">Request Early Access</span>
+        </a>
 
-        <div class="services-teaser-list">
-          <div class="service-brief reveal">
-            <div class="service-brief-num">01</div>
-            <div class="service-brief-name">Technology Due Diligence</div>
-            <p class="service-brief-desc">Independent view before capital commits. What you&#8217;re buying, what it costs to operate, what needs to change.</p>
-          </div>
-          <div class="service-brief reveal reveal-d1">
-            <div class="service-brief-num">02</div>
-            <div class="service-brief-name">Architecture Advisory</div>
-            <p class="service-brief-desc">The architecture your next three years will run on. System design, data strategy, API contracts, vendor selection.</p>
-          </div>
-          <div class="service-brief reveal reveal-d2">
-            <div class="service-brief-num">03</div>
-            <div class="service-brief-name">Odoo Delivery</div>
-            <p class="service-brief-desc">End-to-end Odoo implementation. Configuration designed before a module is touched. Clean integration, full handover.</p>
-          </div>
-          <div class="service-brief reveal">
-            <div class="service-brief-num">04</div>
-            <div class="service-brief-name">Software Quality</div>
-            <p class="service-brief-desc">Architecture, code hygiene, observability, CI/CD, and the culture that makes it stick.</p>
-          </div>
-          <div class="service-brief reveal reveal-d1">
-            <div class="service-brief-num">05</div>
-            <div class="service-brief-name">Global Capability &amp; Delivery</div>
-            <p class="service-brief-desc">Design and build Global Capability Centres. Hiring, governance, operating model, managed delivery.</p>
-          </div>
-          <div class="service-brief reveal reveal-d2">
-            <div class="service-brief-num">06</div>
-            <div class="service-brief-name">Hiring Solutions</div>
-            <p class="service-brief-desc">Technical hiring with technical judgment. Senior engineering, AI and data roles, full team builds.</p>
-          </div>
-        </div>
+      </div>
+    </section>
 
-        <div class="services-teaser-footer reveal">
-          <span class="services-count">Seven practice areas &#8212; all principal-led</span>
-          <a href="/services.html" class="btn-text" style="color: var(--amber);">See all services <span class="arr">&#8594;</span></a>
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-inner">
+
+        <p class="eyebrow fade-up">Our Services</p>
+        <h2 class="section-h2 fade-up delay-1">Specialized expertise across the technology landscape.</h2>
+
+        <div class="services-grid">
+
+          <div class="service-item fade-up">
+            <p class="service-num">01</p>
+            <h3>Greenfield Implementation</h3>
+            <p>Building new systems from the ground up with modern architecture, scalability, and AI/ML integration at the core.</p>
+            <div class="tags">
+              <span class="tag">Architecture</span>
+              <span class="tag">AI/ML</span>
+              <span class="tag">Scalability</span>
+            </div>
+          </div>
+
+          <div class="service-item fade-up delay-1">
+            <p class="service-num">02</p>
+            <h3>Architecture Advisory</h3>
+            <p>Strategic guidance on system design, technical roadmaps, and technology decisions for enterprises and startups.</p>
+            <div class="tags">
+              <span class="tag">Strategy</span>
+              <span class="tag">Design</span>
+              <span class="tag">Leadership</span>
+            </div>
+          </div>
+
+          <div class="service-item fade-up delay-2">
+            <p class="service-num">03</p>
+            <h3>Data Advisory</h3>
+            <p>Data strategy, infrastructure design, and analytics capabilities including ML pipelines and data governance.</p>
+            <div class="tags">
+              <span class="tag">Data</span>
+              <span class="tag">ML</span>
+              <span class="tag">Analytics</span>
+            </div>
+          </div>
+
+          <div class="service-item fade-up">
+            <p class="service-num">04</p>
+            <h3>Odoo Advisory</h3>
+            <p>Implementation, customization, and optimization of Odoo ERP systems for complex enterprise operations.</p>
+            <div class="tags">
+              <span class="tag">ERP</span>
+              <span class="tag">Implementation</span>
+              <span class="tag">Odoo</span>
+            </div>
+          </div>
+
+          <div class="service-item fade-up delay-1">
+            <p class="service-num">05</p>
+            <h3>Hiring Solutions</h3>
+            <p>Building and scaling engineering teams across geographies, from recruitment to team integration.</p>
+            <div class="tags">
+              <span class="tag">Hiring</span>
+              <span class="tag">Talent</span>
+              <span class="tag">Operations</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- INCUBATOR (dark section) -->
+    <section class="section section-dark" id="incubator">
+      <div class="section-inner">
+
+        <div class="incubator-grid">
+          <div class="incubator-left">
+            <p class="eyebrow eyebrow-dark fade-up">The Incubator</p>
+            <h2 class="fade-up delay-1">
+              Backing ventures at the intersection of technology and operations.
+            </h2>
+            <div class="incubator-pillars">
+              <div class="incubator-pillar fade-up delay-1">
+                <p class="eyebrow eyebrow-gold">Capital</p>
+                <p>We invest in early-stage ventures with strong technical foundations and real-world impact.</p>
+              </div>
+              <div class="incubator-pillar fade-up delay-2">
+                <p class="eyebrow eyebrow-gold">Architecture</p>
+                <p>Technical guidance from day one. We help you build systems that scale.</p>
+              </div>
+              <div class="incubator-pillar fade-up delay-1">
+                <p class="eyebrow eyebrow-gold">Network</p>
+                <p>Access to investors, advisors, and operators who understand your space.</p>
+              </div>
+              <div class="incubator-pillar fade-up delay-2">
+                <p class="eyebrow eyebrow-gold">Hiring</p>
+                <p>Help building your engineering team across geographies.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="incubator-right fade-up delay-2">
+            <p class="eyebrow eyebrow-dark">Investment Thesis</p>
+            <p class="body-large-dark">
+              We back founders building at the intersection of software and physical operations. The most valuable technology companies are those that understand the real world, where software meets customers, data, and infrastructure that people depend on.
+            </p>
+            <p class="body-dark">
+              We look for technical founders with deep domain expertise, solving problems that matter, with the discipline to build products that endure.
+            </p>
+            <a href="#contact" class="btn-primary" style="margin-top: 2.5rem; display: inline-block;">Apply to the Incubator</a>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- INCUBATOR (always dark) -->
-    <div class="incubator" id="incubator">
-      <div class="incubator-inner">
+    <div class="divider" aria-hidden="true"></div>
 
-        <div class="eyebrow incubator-eyebrow reveal">Incubator</div>
-        <h2 class="incubator-h2 reveal reveal-d1">
-          We back founders who<br><em>build at the edge.</em>
-        </h2>
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-inner">
 
-        <div class="incubator-split">
-          <div class="incubator-thesis reveal reveal-d1">
-            <p>Alakhy backs early ventures at the intersection of technology and operations. Not just capital &#8212; we embed technical depth, platform capability, and our network into every company we back.</p>
-            <p>We look for founders solving real operational problems with software that has to work under real-world conditions &#8212; in markets where infrastructure is unreliable and the stakes are high.</p>
-            <p>If you are building something in this space, we want to hear about it.</p>
+        <div class="founder-grid">
+
+          <!-- The Principal -->
+          <div class="fade-up">
+            <p class="eyebrow">The Principal</p>
+            <h2 class="founder-name">Building the right things. At scale.</h2>
+            <p class="founder-bio">
+              The principal behind Alakhy works with founders, investors, and companies to design and build systems that endure. Platforms that scale. Architecture that holds under real-world pressure. Across Africa, South Asia, and globally.
+            </p>
+            <p class="founder-bio">
+              The work spans technology due diligence, architecture advisory, fractional CTO engagements, and hands-on platform delivery. The common thread is bringing the depth of someone who has actually built at scale, not just advised on it.
+            </p>
+
+            <div class="founder-creds">
+              <span class="cred-tag">CISSP</span>
+              <span class="cred-tag">CEH</span>
+              <span class="cred-tag">LPT</span>
+              <span class="cred-tag">20+ years</span>
+            </div>
+
+            <a href="https://dhirajbhatt.com" target="_blank" rel="noopener" class="founder-link">
+              dhirajbhatt.com &rarr;
+            </a>
           </div>
-          <div class="reveal reveal-d2">
-            <div class="brings-label">What Alakhy brings</div>
-            <ul class="brings-list">
-              <li>Technical co-founding capacity</li>
-              <li>AI and data systems expertise</li>
-              <li>Platform architecture from day one</li>
-              <li>GCC and delivery infrastructure</li>
-              <li>Network across fintech, logistics, and enterprise</li>
-            </ul>
+
+          <!-- Contact form -->
+          <div class="fade-up delay-1">
+            <p class="eyebrow">Get In Touch</p>
+            <form class="contact-form" id="contactForm" action="#" method="POST">
+              <div class="form-field">
+                <label for="fname">Name</label>
+                <input type="text" id="fname" name="name" required autocomplete="name">
+              </div>
+              <div class="form-field">
+                <label for="femail">Email</label>
+                <input type="email" id="femail" name="email" required autocomplete="email">
+              </div>
+              <div class="form-field">
+                <label for="fcompany">Company</label>
+                <input type="text" id="fcompany" name="company" autocomplete="organization">
+              </div>
+              <div class="form-field">
+                <label for="ftype">I am interested in</label>
+                <div class="select-wrap">
+                  <select id="ftype" name="engagementType" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="products">Products</option>
+                    <option value="incubator">Incubator</option>
+                    <option value="services">Services</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="fmessage">Message</label>
+                <textarea id="fmessage" name="message" rows="4"></textarea>
+              </div>
+              <button type="submit" class="btn-primary btn-full" id="sendBtn">Send Message</button>
+            </form>
           </div>
+
         </div>
 
       </div>
-    </div>
-
-    <!-- ENGAGE CTA -->
-    <div class="engage-cta">
-      <div class="engage-cta-inner">
-        <div class="engage-cta-text reveal">
-          Ready to start a<br><em>conversation?</em>
-        </div>
-        <div class="engage-cta-actions reveal reveal-d1">
-          <a href="/about.html#contact" class="btn-solid">Start a conversation</a>
-          <a href="mailto:hello@alakhy.com" class="engage-cta-email">hello@alakhy.com</a>
-        </div>
-      </div>
-    </div>
+    </section>
 
   </main>
 
+  <div class="divider" aria-hidden="true"></div>
+
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
-      <div class="footer-brand">Alak<span>hy</span></div>
-      <div class="footer-tagline">Technology &#183; Products &#183; Insight</div>
-      <div class="footer-copy">&#169; 2026 Alakhy</div>
+      <div class="footer-brand">
+        <div class="nav-logo">Alak<span class="logo-accent">hy</span></div>
+        <p>Technology &#183; Products &#183; Incubation</p>
+      </div>
+      <div class="footer-links">
+        <p class="eyebrow">Quick Links</p>
+        <a href="#what-we-are">What We Are</a>
+        <a href="#products">Products</a>
+        <a href="#services">Services</a>
+        <a href="#incubator">Incubator</a>
+      </div>
+      <div class="footer-connect">
+        <p class="eyebrow">Connect</p>
+        <a href="#contact">Contact</a>
+        <a href="https://dhirajbhatt.com" target="_blank" rel="noopener">dhirajbhatt.com</a>
+      </div>
+    </div>
+    <div class="footer-base">
+      <p>&#169; 2026 Alakhy. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
-
 </body>
 </html>
