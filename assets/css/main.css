@@ -767,7 +767,6 @@ body {
   }
   .arm-card:last-child { border-bottom: 0; }
   .arm-card:not(:first-child) { padding-left: 0; }
-  .service-row,
   .product-row { grid-template-columns: 1fr; gap: 1rem; }
   .incubator-grid,
   .contact-grid { grid-template-columns: 1fr; }
@@ -778,4 +777,64 @@ body {
   .nav-cta { display: none; }
   .nav-toggle { display: flex; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── MOBILE — fit sections within viewport ── */
+@media (max-width: 768px) {
+
+  /* Tighter header */
+  .header-inner { padding: 1rem var(--pad); }
+  body { padding-top: 64px; }
+
+  /* Sections — reduce padding so content has room */
+  .section { padding: 2.5rem 0; }
+  #services.section { padding: 1.5rem 0; }
+
+  .section-h2 {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+    margin-bottom: 1.5rem;
+  }
+  #services .section-h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Hero */
+  .hero { padding: 3rem 0 2rem; }
+
+  /* What We Are */
+  .what-header { gap: 1.25rem; margin-bottom: 1.75rem; }
+  .what-h2 { font-size: 1.9rem; }
+  .what-right p { font-size: 1rem; margin-bottom: 0.75rem; }
+  .arm-card { padding: 1.5rem 0; }
+  .arm-card p { font-size: 0.95rem; margin-bottom: 1rem; }
+
+  /* Services — very compact so all 5 + CTA fit */
+  .svc-grid { gap: 0.6rem; margin-bottom: 0.75rem; }
+  .svc-card { padding: 1rem 1.25rem; }
+  .svc-num { margin-bottom: 0.3rem; }
+  .svc-title { font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .svc-desc { font-size: 0.8rem; line-height: 1.55; margin-bottom: 0.6rem; }
+  .svc-tags span { font-size: 0.6rem; padding: 0.18rem 0.45rem; }
+  .svc-cta { min-height: 3.5rem; }
+
+  /* Incubator */
+  .incubator-grid { gap: 1.75rem; }
+  .incubator-body { font-size: 1rem; margin-bottom: 1rem; }
+  .pillar { padding: 1.25rem 0; }
+  .pillar p { font-size: 0.9rem; }
+
+  /* Products */
+  .product-row { gap: 1.5rem; padding: 2rem 0; }
+  .product-name { font-size: 1.8rem; }
+  .product-body p { font-size: 1rem; margin-bottom: 1.25rem; }
+
+  /* Contact */
+  .contact-grid { gap: 2rem; }
+  .contact-body { font-size: 0.95rem; }
+
+  /* Floating arrows — smaller, lower z-index on mobile */
+  .fp-nav { bottom: 1.25rem; right: 1.25rem; }
+  .fp-arrow { width: 40px; height: 40px; }
+  .fp-arrow svg { width: 15px; height: 15px; }
 }

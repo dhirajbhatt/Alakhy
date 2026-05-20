@@ -267,13 +267,57 @@
     }, { passive: false });
 
     /* ── Touch ── */
+    /* If a section's content is taller than the viewport (overflows),
+       only trigger a section transition when the user has scrolled to
+       the top or bottom boundary of that section. Otherwise let the
+       browser handle natural scroll within the section. */
+    function sectionOverflows(index) {
+      var sec = sections[index];
+      return sec && sec.scrollHeight > window.innerHeight + 20;
+    }
+
     var touchY = 0;
     window.addEventListener('touchstart', function (e) {
       touchY = e.touches[0].clientY;
     }, { passive: true });
+
     window.addEventListener('touchend', function (e) {
       var diff = touchY - e.changedTouches[0].clientY;
-      if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+      if (Math.abs(diff) < 50) return;
+
+      if (sectionOverflows(current)) {
+        /* Only transition at the boundaries of the overflowing section */
+        var sec      = sections[current];
+        var secTop   = getTop(sec);
+        var secBot   = secTop + sec.scrollHeight;
+        var viewBot  = window.scrollY + window.innerHeight;
+
+        if (diff > 0 && viewBot >= secBot - 30) {
+          goTo(current + 1); /* reached bottom — go to next */
+        } else if (diff < 0 && window.scrollY <= secTop + 30) {
+          goTo(current - 1); /* reached top — go to prev */
+        }
+        /* else: mid-section scroll — let browser handle it naturally */
+      } else {
+        goTo(current + (diff > 0 ? 1 : -1));
+      }
+    }, { passive: true });
+
+    /* Keep `current` accurate during natural scroll on mobile
+       (fires when browser scrolls within an overflowing section) */
+    window.addEventListener('scroll', function () {
+      if (animating) return;
+      var mid = window.scrollY + window.innerHeight / 2;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (getTop(sections[i]) <= mid) {
+          if (current !== i) {
+            current = i;
+            updateNav(i);
+            updateArrows(i);
+          }
+          break;
+        }
+      }
     }, { passive: true });
 
     /* ── Keyboard ── */
