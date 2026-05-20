@@ -13,14 +13,20 @@
   }
 
   /* ── VIEWPORT HEIGHT ── */
-  /* Captures real inner height (excludes mobile browser chrome) and exposes
-     it as --vh so every section uses the actual visible screen, not CSS 100vh */
-  function initViewportHeight() {
+  /* --vh = window.innerHeight minus the fixed header height.
+     This is the real usable screen per section — the header
+     is always visible and must not be counted as free space.
+     Called once immediately (header may not exist yet, falls back to 80px)
+     and again after partials load when the real header height is known. */
+  function makeSetVh() {
     function setVh() {
-      document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+      var headerEl = document.getElementById('header');
+      var headerH  = headerEl ? headerEl.offsetHeight : 80;
+      document.documentElement.style.setProperty('--vh', (window.innerHeight - headerH) + 'px');
     }
     setVh();
     window.addEventListener('resize', setVh, { passive: true });
+    return setVh; /* return so boot can call it again after partials inject the header */
   }
 
   /* ── NAV SCROLL BORDER ── */
@@ -135,6 +141,11 @@
       return el.getBoundingClientRect().top + window.scrollY;
     }
 
+    /* Header height used to offset scroll target so sections land
+       below the fixed bar, not hidden behind it */
+    var headerEl = document.getElementById('header');
+    function headerH() { return headerEl ? headerEl.offsetHeight : 0; }
+
     function goTo(index, immediate) {
       if (index < 0 || index >= sections.length) return;
       if (animating && !immediate) return;
@@ -142,7 +153,7 @@
       current   = index;
       animating = true;
 
-      var target    = getTop(sections[index]);
+      var target    = Math.max(0, getTop(sections[index]) - headerH());
       var startPos  = window.scrollY;
       var distance  = target - startPos;
       var startTime = null;
@@ -273,7 +284,8 @@
        browser handle natural scroll within the section. */
     function sectionOverflows(index) {
       var sec = sections[index];
-      return sec && sec.scrollHeight > window.innerHeight + 20;
+      var usable = window.innerHeight - headerH();
+      return sec && sec.scrollHeight > usable + 20;
     }
 
     var touchY = 0;
@@ -357,12 +369,13 @@
   }
 
   /* ── BOOT ── */
-  initViewportHeight(); /* run immediately — must be set before first paint */
+  var setVh = makeSetVh(); /* run immediately with 80px header fallback */
 
   Promise.all([
     loadPartial('/assets/partials/nav.html',    'nav-root'),
     loadPartial('/assets/partials/footer.html', 'footer-root')
   ]).then(function () {
+    setVh(); /* recalculate now that the real header is in the DOM */
     initScrollBorder();
     initMobileMenu();
     initContactForm();

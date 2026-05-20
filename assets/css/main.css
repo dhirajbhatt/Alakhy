@@ -415,6 +415,8 @@ body {
 .arm-card {
   padding: 3.5rem 3rem 3.5rem 0;
   border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 .arm-card:last-child { border-right: 0; padding-right: 0; }
 .arm-card:not(:first-child) { padding-left: 3rem; }
@@ -437,6 +439,7 @@ body {
   font-weight: 500;
   color: var(--black);
   transition: color 0.15s;
+  margin-top: auto;
 }
 .row-link:hover { color: var(--gold); }
 
@@ -583,11 +586,11 @@ body {
   display: grid;
   grid-template-columns: 320px 1fr;
   gap: 5rem;
-  padding: 4rem 0;
+  padding: 3rem 0;
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   align-items: center;
 }
+.product-row:last-child { border-bottom: 1px solid var(--border); }
 .product-meta {
   display: flex;
   flex-direction: column;
@@ -611,6 +614,17 @@ body {
   color: #3a6647;
   background: rgba(58,102,71,0.1);
   border-color: rgba(58,102,71,0.25);
+}
+.product-tag-dev {
+  color: #7a6030;
+  background: rgba(196,154,60,0.12);
+  border-color: rgba(196,154,60,0.3);
+}
+.product-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 .product-name {
   font-size: clamp(2rem, 4vw, 3.5rem);
@@ -788,15 +802,15 @@ body {
 
   /* Sections — reduce padding so content has room */
   .section { padding: 2.5rem 0; }
-  #services.section { padding: 1.5rem 0; }
+  #services.section { padding: 1rem 0; }
 
   .section-h2 {
     font-size: clamp(1.8rem, 6vw, 2.4rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
   #services .section-h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 
   /* Hero */
@@ -809,14 +823,22 @@ body {
   .arm-card { padding: 1.5rem 0; }
   .arm-card p { font-size: 0.95rem; margin-bottom: 1rem; }
 
-  /* Services — very compact so all 5 + CTA fit */
-  .svc-grid { gap: 0.6rem; margin-bottom: 0.75rem; }
-  .svc-card { padding: 1rem 1.25rem; }
-  .svc-num { margin-bottom: 0.3rem; }
-  .svc-title { font-size: 0.95rem; margin-bottom: 0.3rem; }
-  .svc-desc { font-size: 0.8rem; line-height: 1.55; margin-bottom: 0.6rem; }
-  .svc-tags span { font-size: 0.6rem; padding: 0.18rem 0.45rem; }
-  .svc-cta { min-height: 3.5rem; }
+  /* Services — clamp desc to 1 line so all 5 + CTA fit in one screen */
+  .svc-grid { gap: 0.5rem; margin-bottom: 0.5rem; }
+  .svc-card { padding: 0.75rem 1rem; }
+  .svc-num { margin-bottom: 0.2rem; }
+  .svc-title { font-size: 0.9rem; margin-bottom: 0.2rem; }
+  .svc-desc {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .svc-tags { display: none; }
+  .svc-cta { min-height: 3rem; }
 
   /* Incubator */
   .incubator-grid { gap: 1.75rem; }
