@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alakhy.com/sitemap.xml
