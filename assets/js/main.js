@@ -95,17 +95,12 @@
 
       fetch(endpoint, {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
+        mode: 'no-cors',
         body: new FormData(form)
       })
-        .then(function (res) {
-          if (res.ok) {
-            sendBtn.textContent = 'Sent. We will be in touch.';
-            form.reset();
-          } else {
-            sendBtn.textContent = 'Something went wrong. Try email.';
-            sendBtn.disabled = false;
-          }
+        .then(function () {
+          sendBtn.textContent = 'Sent. We will be in touch.';
+          form.reset();
         })
         .catch(function () {
           sendBtn.textContent = 'Something went wrong. Try email.';
